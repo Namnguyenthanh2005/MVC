@@ -1,0 +1,29 @@
+﻿@model IEnumerable<MVC_Group3.Models.Order>
+
+<h2>Danh sách đơn hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Mã đơn hàng</th>
+            <th>Người đặt</th>
+            <th>Tổng tiền</th>
+            <th>Ngày đặt</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.UserId</td>
+                <td>@order.TotalAmount.ToString("C")</td>
+                <td>@order.OrderDate.ToString("dd/MM/yyyy")</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@order.Id">Chi tiết</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

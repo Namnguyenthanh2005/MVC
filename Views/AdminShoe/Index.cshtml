@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MVC_Group3.Models.Shoe>
+
+<h2>Danh sách sản phẩm</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Ảnh</th>
+            <th>Tên</th>
+            <th>Giá</th>
+            <th>Thương hiệu</th>
+            <th>Kích thước</th>
+            <th>Số lượng</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shoe in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@shoe.ImageUrl" alt="Ảnh sản phẩm" style="width: 100px; height: auto;" />
+                </td>
+                <td>@shoe.Name</td>
+                <td>@shoe.Price.ToString("C")</td>
+                <td>@shoe.Brand</td>
+                <td>@shoe.Size</td>
+                <td>@shoe.Quantity</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@shoe.Id">Sửa</a> |
+                    <a asp-action="Delete" asp-route-id="@shoe.Id">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Create" class="btn btn-primary">Thêm sản phẩm mới</a>

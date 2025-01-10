@@ -1,0 +1,19 @@
+﻿@model IEnumerable<MVC_Group3.Models.Shoe>
+
+<h2>Sản phẩm</h2>
+
+<div class="row">
+    @foreach (var shoe in Model)
+    {
+        <div class="col-md-3">
+            <div class="card">
+                <img src="@shoe.ImageUrl" class="card-img-top" alt="Ảnh sản phẩm" />
+                <div class="card-body">
+                    <h5 class="card-title">@shoe.Name</h5>
+                    <p class="card-text">@shoe.Price.ToString("C")</p>
+                    <a asp-action="Details" asp-route-id="@shoe.Id" class="btn btn-primary">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

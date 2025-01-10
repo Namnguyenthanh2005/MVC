@@ -1,0 +1,27 @@
+﻿@model MVC_Group3.Models.Shoe
+
+<h2>Chỉnh sửa sản phẩm</h2>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="Name">Tên sản phẩm</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Price">Giá</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ImageUrl">Ảnh hiện tại</label><br />
+        <img src="@Model.ImageUrl" alt="Ảnh sản phẩm" style="width: 100px; height: auto;" /><br />
+        <label for="ImageUrl">Đường dẫn ảnh mới</label>
+        <input asp-for="ImageUrl" class="form-control" />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Cập nhật</button>
+</form>

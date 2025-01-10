@@ -1,0 +1,12 @@
+﻿@model MVC_Group3.Models.Order
+
+<h2>Chi tiết đơn hàng</h2>
+
+<div>
+    <p><strong>Mã đơn hàng:</strong> @Model.Id</p>
+    <p><strong>Người đặt:</strong> @Model.UserId</p>
+    <p><strong>Tổng tiền:</strong> @Model.TotalAmount.ToString("C")</p>
+    <p><strong>Ngày đặt:</strong> @Model.OrderDate.ToString("dd/MM/yyyy")</p>
+</div>
+
+<a asp-action="Index" class="btn btn-primary">Quay lại</a>

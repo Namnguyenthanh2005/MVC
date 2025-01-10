@@ -1,0 +1,14 @@
+﻿@model MVC_Group3.Models.Shoe
+
+<h2>Xóa sản phẩm</h2>
+
+<div>
+    <h4>Bạn có chắc chắn muốn xóa sản phẩm sau?</h4>
+    <p><strong>@Model.Name</strong></p>
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>
